@@ -1,10 +1,11 @@
+const path = require("path");
 const express = require("express");
 const { add, subtract, multiply, divide } = require("./calculator");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "..", "public")));
 
 app.get("/api/calculator", (req, res) => {
   const { op, a, b } = req.query;
