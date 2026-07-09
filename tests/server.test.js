@@ -1,6 +1,14 @@
 const request = require("supertest");
 const app = require("../src/server");
 
+describe("GET / (static file)", () => {
+  it("serves index.html", async () => {
+    const res = await request(app).get("/");
+    expect(res.status).toBe(200);
+    expect(res.headers["content-type"]).toMatch(/html/);
+  });
+});
+
 describe("GET /api/calculator", () => {
   it("adds two numbers", async () => {
     const res = await request(app).get("/api/calculator?op=add&a=10&b=5");

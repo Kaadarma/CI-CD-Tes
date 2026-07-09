@@ -4,6 +4,8 @@ const { add, subtract, multiply, divide } = require("./calculator");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static("public"));
+
 app.get("/api/calculator", (req, res) => {
   const { op, a, b } = req.query;
 
