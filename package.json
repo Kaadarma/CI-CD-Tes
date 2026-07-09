@@ -4,6 +4,7 @@
   "description": "Belajar CI/CD dengan Node.js - Simple Calculator",
   "scripts": {
     "start": "node src/server.js",
+    "build": "node -e \"require('./src/server'); console.log('Build OK')\"",
     "test": "jest",
     "lint": "eslint src/ tests/"
   },
