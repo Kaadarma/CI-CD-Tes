@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, "..", "public")));
 
-app.get("/api/calculator", (req, res) => {
+app.get("/api/calculator", (req, res) => 
   const { op, a, b } = req.query;
 
   if (!op || a === undefined || b === undefined) {
